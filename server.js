@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'src')));
 
 // Redirect all requests to index.html (SPA support if needed)
-app.get('*', (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
